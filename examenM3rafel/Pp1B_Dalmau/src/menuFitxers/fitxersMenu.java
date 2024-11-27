@@ -2,6 +2,8 @@ package menuFitxers;
 
 import java.util.Scanner;
 
+import metodesFitxers.fitxers;
+
 public class fitxersMenu {
 
     public static void mostrarMenu() {
@@ -16,28 +18,17 @@ public class fitxersMenu {
             
             switch (opcio) {
                 case 1:
-                    System.out.println("Buscar un fitxer per nom.");
-                    TreballFile.buscarFitxer();
+                    System.out.println("Elimina l'extensió:");
+                    fitxers.eliminaExtensio();
                     break;
 
                 case 2:
-                    System.out.println("Buscar fitxer per ruta.");
-                    TreballFile.buscarRuta();
+                    fitxers.sencerMesGran();                    
                     break;
 
                 case 3:
                     System.out.println("Llistar fitxers dins un directori.");
-                    TreballFile.llistarFitxers();
-                    break;
-
-                case 4:
-                    System.out.println("Canviar l'extensió d'un fitxer.");
-                    TreballFile.canviaExtensio();
-                    break;
-
-                case 5:
-                    System.out.println("Mostrar directoris pares.");
-                    TreballFile.mostrarDirectoris();
+                    
                     break;
 
                 case 0:
@@ -49,18 +40,16 @@ public class fitxersMenu {
                     break;
             }
 
-        } while (opcio != 0); // eel bucle continua fins que el usuari esculli la opció 0
+        } while (opcio != 0); 
 
         scanner.close();
     }
 
     public static String obtenirMenu() {
         return "\nTria una opció:\n" +
-               "1. Buscar un fitxer o carpeta per nom\n" +
-               "2. Buscar fitxer o carpeta a partir de la ruta\n" +
+               "1. Eliminar extensió\n" +
+               "2. Mostrar valor més gran del fitxer Sencers.txt\n" +
                "3. Llistar fitxers dins un directori\n" +
-               "4. Canvia l'extensió d'un fitxer\n" +
-               "5. Mostrar directoris pares\n" +
                "0. Sortir";
     }
 }
