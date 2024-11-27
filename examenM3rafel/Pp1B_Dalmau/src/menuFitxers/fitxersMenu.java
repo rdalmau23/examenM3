@@ -27,12 +27,12 @@ public class fitxersMenu {
                     break;
 
                 case 3:
-                    System.out.println("Llistar fitxers dins un directori.");
-                    
+                    System.out.println("Obtenir mitja de notes");
+                    fitxers.calculaMitja();
                     break;
 
                 case 0:
-                    System.out.println("Adeu Andreu!");
+                    System.out.println("Adeu Montse!");
                     break;
 
                 default:
@@ -46,10 +46,10 @@ public class fitxersMenu {
     }
 
     public static String obtenirMenu() {
-        return "\nTria una opció:\n" +
+        return "\nHola Montse, tria una opció:\n" +
                "1. Eliminar extensió\n" +
                "2. Mostrar valor més gran del fitxer Sencers.txt\n" +
-               "3. Llistar fitxers dins un directori\n" +
+               "3. Calcular nota mitjana del fitxer NotesAlumnes.txt\n" +
                "0. Sortir";
     }
 }
