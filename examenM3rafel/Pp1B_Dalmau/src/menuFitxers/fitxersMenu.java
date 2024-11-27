@@ -18,7 +18,6 @@ public class fitxersMenu {
             
             switch (opcio) {
                 case 1:
-                    System.out.println("Elimina l'extensió:");
                     fitxers.eliminaExtensio();
                     break;
 
@@ -27,7 +26,6 @@ public class fitxersMenu {
                     break;
 
                 case 3:
-                    System.out.println("Obtenir mitja de notes");
                     fitxers.calculaMitja();
                     break;
 
