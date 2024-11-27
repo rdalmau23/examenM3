@@ -11,28 +11,30 @@ public class fitxers {
         try {
             System.out.println("Escriu la ruta:");
             String rutaFitxer = scanner.nextLine();
-
+    
             File fitxer = new File(rutaFitxer);
-
+    
             String nomFitxer = fitxer.getName();
-            String[] parts = nomFitxer.split("\\."); 
-
-            String nomBase = "";
-            for (int i = 0; i < parts.length - 1; i++) {
-                nomBase += parts[i];
-                if (i < parts.length - 2) {
-                    nomBase += "."; 
+            String[] parts = nomFitxer.split("\\.");
+    
+            if (parts.length > 1) {
+                String nomBase = String.join(".", java.util.Arrays.copyOf(parts, parts.length - 1));
+                File fitxerSenseExtensio = new File(fitxer.getParent(), nomBase);
+    
+                if (fitxer.renameTo(fitxerSenseExtensio)) {
+                    System.out.println("Fitxer renombrat a: " + fitxerSenseExtensio.getName());
+                } else {
+                    System.out.println("Error al renombrar el fitxer.");
                 }
+            } else {
+                System.out.println("El fitxer no té cap extensió.");
             }
-
-            File fitxerSenseExtensio = new File(fitxer.getParent(), nomBase);
-
-            System.out.println("Fitxer renombrat: " + fitxerSenseExtensio.getName());
-            
+    
         } catch (Exception e) {
             System.out.println("Error: " + e.getMessage());
         }
     }
+    
 
     public static void sencerMesGran() {
         try {
